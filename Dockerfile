@@ -5,9 +5,9 @@ ENV GO_VERSION 1.17.6
 RUN apt-get update && apt-get install -y \
     git wget tmux nano procps links unzip curl \
     python3 python3-venv python3-wheel \
-    php-cli php-curl php-xml \
+    php-cli php-curl php-xml ca-certificates \
     shellcheck silversearcher-ag locales openssh-client clang-format \ 
-    rsync make libssl-dev gettext gcc \
+    rsync libssl-dev gettext build-essential bison flex libfl-dev \
     --no-install-recommends && rm -r /var/lib/apt/lists/* && \
     cd /tmp && \
     wget https://go.dev/dl/go$GO_VERSION.linux-amd64.tar.gz && \
