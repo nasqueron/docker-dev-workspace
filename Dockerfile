@@ -4,7 +4,8 @@ ENV GO_VERSION 1.17.6
 
 RUN apt-get update && apt-get install -y \
     git wget tmux nano procps links unzip curl less \
-    python3 python3-venv python3-wheel \
+    python3 python3-venv python3-wheel python3-pip \
+    python3-flake8 black jsonlint \
     php-cli php-curl php-xml ca-certificates \
     shellcheck silversearcher-ag locales openssh-client clang-format \ 
     rsync libssl-dev gettext build-essential bison flex libfl-dev \
