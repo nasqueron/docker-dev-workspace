@@ -10,10 +10,24 @@
 #                   as a Docker container
 #   License:        Trivial work, not eligible to copyright
 #                   If copyright eligible, BSD-2-Clause
-#   Image:          nasqueron/dev-workspace-go
+#   Image:          nasqueron/dev-workspace-<flavour>
 #   -------------------------------------------------------------
 
-BASE_IMAGE=nasqueron/dev-workspace-go
+set -e
+
+#   -------------------------------------------------------------
+#   Parse arguments
+#   - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+if [ $# -lt 2 ]; then
+    echo "Usage: $(basename "$0") <flavour> <command>" >&2
+    exit 1
+fi
+
+FLAVOUR=$1
+shift
+
+BASE_IMAGE=nasqueron/dev-workspace-$FLAVOUR
 
 if [ -t 0 ]; then
 	# If a stdin entry is available
